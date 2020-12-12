@@ -1,4 +1,4 @@
-inp="""sszojmmrrkwuftyv
+sszojmmrrkwuftyv
 isaljhemltsdzlum
 fujcyucsrxgatisb
 qiqqlmcgnhzparyg
@@ -998,20 +998,3 @@ bzukgvyoqewniivj
 iduapzclhhyfladn
 fbpyzxdfmkrtfaeg
 yzsmlbnftftgwadz
-"""
-#inp="dvszwmarrgswjxmb"
-inpa=inp.split("\n")
-count=0
-for s in inpa:
-    c1=False
-    for i in range(len(s)-1):
-        if s.count(s[i:i+2])>=2:
-            c1=True
-    c2=False
-    for i in range(len(s)-2):
-        if s[i]==s[i+2]:
-            c2=True
-        
-    if c1 and c2:
-        count+=1
-print(count)

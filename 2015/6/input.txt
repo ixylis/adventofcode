@@ -1,4 +1,4 @@
-inp="""toggle 461,550 through 564,900
+toggle 461,550 through 564,900
 turn off 370,39 through 425,839
 turn off 464,858 through 833,915
 turn off 812,389 through 865,874
@@ -298,32 +298,3 @@ turn off 210,146 through 221,482
 turn off 209,780 through 572,894
 turn on 766,112 through 792,868
 turn on 222,12 through 856,241
-"""
-inpa = inp.split("\n")
-lights = [[0]*1000 for i in range(1000)]
-for i in inpa:
-    ia = i.split(" ")
-    if len(ia)==5:
-        c1=ia[2].split(",")
-        c2=ia[4].split(",")
-        x1=int(c1[0])
-        y1=int(c1[1])
-        x2=int(c2[0])
-        y2=int(c2[1])
-        for x in range(x1, x2+1):
-            for y in range(y1, y2+1):
-                if ia[1]=="on":
-                    lights[x][y]+=1
-                elif lights[x][y]>=1:
-                    lights[x][y]-=1
-    elif len(ia)==4:
-        c1=ia[1].split(",")
-        c2=ia[3].split(",")
-        x1=int(c1[0])
-        y1=int(c1[1])
-        x2=int(c2[0])
-        y2=int(c2[1])
-        for x in range(x1, x2+1):
-            for y in range(y1, y2+1):
-                lights[x][y]+=2
-print(sum([sum(l) for l in lights]))

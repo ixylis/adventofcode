@@ -1,4 +1,4 @@
-inp="""3x11x24
+3x11x24
 13x5x19
 1x9x27
 24x8x21
@@ -998,16 +998,3 @@ inp="""3x11x24
 3x12x15
 24x25x17
 14x6x11
-"""
-total=0
-inpa1=inp.split("\n")
-for i in inpa1:
-    inpa2=i.split("x")
-    try:
-        l=int(inpa2[0])
-        w=int(inpa2[1])
-        h=int(inpa2[2])
-        total+=2*min(l+w, l+h, h+w)+l*w*h
-    except:
-        pass
-print(total)
